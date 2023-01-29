@@ -18,7 +18,7 @@ const Header = (baslik, tarih, yazi) => {
   divAdd.setAttribute("class", "header");
 
   const headerspan = document.createElement("span");
-  headerspan.classList = "date";
+  headerspan.classList.add = "date";
   headerspan.textContent = tarih;
   divAdd.appendChild(headerspan);
 
@@ -27,7 +27,7 @@ const Header = (baslik, tarih, yazi) => {
   divAdd.appendChild(headerh1);
 
   const headspan = document.createElement("span");
-  headspan.classList = "temp";
+  headspan.classList.add = "temp";
   headspan.textContent = yazi;
   divAdd.appendChild(headspan);
 

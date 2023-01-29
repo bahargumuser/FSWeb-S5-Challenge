@@ -15,36 +15,20 @@ const Tablar = (konu) => {
   //   <div class="tab">teknoloji</div>
   // </div>
   //
-  const divAdd1 = document.createElement("div");
-  divAdd1.setAttribute("class", "topics");
 
-  const topicsdiv = document.createElement("div");
-  topicsdiv.classList = "tab";
-  topicsdiv.textContent = javascript;
-  divAdd1.appendChild(topicsdiv);
+  const divTopics = document.createElement("div");
+  divTopics.setAttribute("class", "topics");
 
-  const topicsdiv2 = document.createElement("div");
-  topicsdiv2.classList = "tab";
-  topicsdiv2.textContent = bootstrap;
-  divAdd1.appendChild(topicsdiv2);
+  konu.forEach((element) => {
+    const tabDiv = document.createElement("div");
+    tabDiv.classList = "tab";
+    tabDiv.textContent = element;
+    divTopics.appendChild(tabDiv);
+  });
 
-  const topicsdiv3 = document.createElement("div");
-  topicsdiv3.classList = "tab";
-  topicsdiv3.textContent = teknoloji;
-  divAdd1.appendChild(topicsdiv3);
-
-  const topicsdiv4 = document.createElement("div");
-  topicsdiv4.classList = "tab";
-  topicsdiv4.textContent = jquery;
-  divAdd1.appendChild(topicsdiv4);
-
-  const topicsdiv5 = document.createElement("div");
-  topicsdiv5.classList = "tab";
-  topicsdiv5.textContent = node.js;
-  divAdd1.appendChild(topicsdiv5);
-
-  return divAdd1;
+  return divTopics;
 };
+//console.log(Tablar(["javascript", "bootstrap", "teknoloji"]));
 
 const tabEkleyici = (secici) => {
   // GÖREV 4
@@ -57,5 +41,7 @@ const tabEkleyici = (secici) => {
 };
 //once dammy ile deneyebilirsin
 // {"konular":["javascript","bootstrap","teknoloji","jquery","node.js"]} //objeden verileri çek
+
+const secilen = document.querySelector("secici");
 
 export { Tablar, tabEkleyici };
